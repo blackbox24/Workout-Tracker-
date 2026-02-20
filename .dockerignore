@@ -1,0 +1,6 @@
+.venv/
+__pycache__
+
+.pre-commit-config.yml
+
+.git
