@@ -102,3 +102,50 @@ CREATE TABLE IF NOT EXISTS workout_sets(
 );
 
 ```
+
+### BACKEND ENDPOINTS
+
+- POST "/api/auth/signup/"
+- POST "/api/auth/login/"
+
+Headers Authorization: "Bearer token"
+
+- GET "/api/workouts/"
+[
+    {
+        "workout_id":1,
+        "user_id":1,
+        "scheduled_date":"12-01-2001",
+        "completed_at":"12-12-2012",
+        "total_duration":"12hours",
+        "workout_sets":[
+            {
+                "id":1,
+                "exercise_id":1,
+                "workout_id::1,
+                "user_id": 1,
+                "reps":1,
+                "weight_lifted":1,
+                "rpe": 1,
+                "set_order": 1,
+            },
+        ]
+    },
+]
+
+- GET "/api/workouts/{id}"
+- PUT "/api/workouts/{id}"
+- DELETE "/api/workouts/{id}"
+
+- GET "/api/workouts/{id}/sets/"
+- POST "/api/workouts/{id}/sets/"
+- GET "/api/workouts/{id}/sets/{id}/"
+- PUT "/api/workouts/{id}/sets/{id}"
+- DELETE "/api/workouts/{id}/sets/{id}"
+
+- GET "/api/report"
+{
+    "total_workouts": 1,
+    "total_completed_workouts":1,
+    "total_workout_sets":"20",
+}
