@@ -110,7 +110,7 @@ CREATE TABLE IF NOT EXISTS workout_sets(
 
 Headers Authorization: "Bearer token"
 
-- GET "/api/workouts/"
+- GET "/api/workouts/?limit=20&page=1"
 [
     {
         "workout_id":1,
