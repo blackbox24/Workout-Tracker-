@@ -15,7 +15,10 @@ certifi==2026.1.4
     # via
     #   httpcore
     #   httpx
+    #   requests
     #   sentry-sdk
+charset-normalizer==3.4.4
+    # via requests
 click==8.3.1
     # via
     #   rich-toolkit
@@ -53,11 +56,13 @@ httpx==0.28.1
     # via
     #   fastapi
     #   fastapi-cloud-cli
+    #   workout-tracker
 idna==3.11
     # via
     #   anyio
     #   email-validator
     #   httpx
+    #   requests
 jinja2==3.1.6
     # via fastapi
 markdown-it-py==4.0.0
@@ -90,6 +95,8 @@ python-multipart==0.0.22
     # via fastapi
 pyyaml==6.0.3
     # via uvicorn
+requests==2.32.5
+    # via workout-tracker
 rich==14.3.3
     # via
     #   rich-toolkit
@@ -124,12 +131,15 @@ typing-inspection==0.4.2
     #   pydantic
     #   pydantic-settings
 urllib3==2.6.3
-    # via sentry-sdk
+    # via
+    #   requests
+    #   sentry-sdk
 uvicorn==0.41.0
     # via
     #   fastapi
     #   fastapi-cli
     #   fastapi-cloud-cli
+    #   workout-tracker
 uvloop==0.22.1 ; platform_python_implementation != 'PyPy' and sys_platform != 'cygwin' and sys_platform != 'win32'
     # via uvicorn
 watchfiles==1.1.1
