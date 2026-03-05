@@ -1,21 +1,21 @@
-from fake import workouts as data
-from models.workouts import WorkoutBody
+from data import workouts as data
+from models.workouts import WorkoutModel, WorkoutBody
 
 
-def get_all() -> list[WorkoutBody]:
+def get_all() -> list[WorkoutModel]:
     return data.get_all()
 
 
-def get_one(id: int) -> WorkoutBody | None:
-    return data.get_single(id)
+def get_one(id: int) -> WorkoutModel | None:
+    return data.get_one(id)
 
 
 def create(workout: WorkoutBody) -> WorkoutBody:
     return data.create(workout)
 
 
-def replace(workout: WorkoutBody, id: int) -> WorkoutBody | None:
-    return data.replace(workout, id)
+# def replace(workout: WorkoutModel, id: int) -> WorkoutModel | None:
+#     return data.replace(workout, id)
 
 
 def modify(workout: WorkoutBody, id: int) -> WorkoutBody | None:

@@ -1,12 +1,12 @@
-from models.workouts import WorkoutBody
+from models.workouts import WorkoutModel
 from services import workouts
 
-sample = WorkoutBody(
+sample = WorkoutModel(
     id=1,
     name="workout1",
     user_id=1,
     scheduled_date="2026-11-11",
-    completed_at=None,
+    completed_at="2026-11-11",
     total_duration=2,
 )
 

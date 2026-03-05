@@ -1,9 +1,9 @@
-from models.workouts import WorkoutBody
+from models.workouts import WorkoutModel
 from typing import List
 
 PREV_ID: int = 0
 workouts = [
-    WorkoutBody(
+    WorkoutModel(
         id=0,
         name="workout1",
         user_id=1,
@@ -14,18 +14,18 @@ workouts = [
 ]
 
 
-def get_all() -> List[WorkoutBody]:
+def get_all() -> List[WorkoutModel]:
     return workouts
 
 
-def get_single(id: int) -> WorkoutBody | None:
+def get_single(id: int) -> WorkoutModel | None:
     for workout in workouts:
         if workout.id == id:
             return workout
     return None
 
 
-def create(workout: WorkoutBody) -> WorkoutBody:
+def create(workout: WorkoutModel) -> WorkoutModel:
     global PREV_ID
     PREV_ID += 1
     workout.id = PREV_ID
@@ -33,7 +33,7 @@ def create(workout: WorkoutBody) -> WorkoutBody:
     return workout
 
 
-def modify(workout: WorkoutBody, id: int) -> WorkoutBody | None:
+def modify(workout: WorkoutModel, id: int) -> WorkoutModel | None:
     for i in range(0, len(workouts)):
         if workouts[i].id == id:
             workouts[i] = workout
@@ -41,7 +41,7 @@ def modify(workout: WorkoutBody, id: int) -> WorkoutBody | None:
     return None
 
 
-def replace(workout: WorkoutBody, id: int) -> WorkoutBody | None:
+def replace(workout: WorkoutModel, id: int) -> WorkoutModel | None:
     for i in range(0, len(workouts)):
         if workouts[i].id == id:
             workout.id = id

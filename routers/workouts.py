@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Path
 from typing import Annotated
 from models.workouts import WorkoutBody, WorkoutSetBody
-from fake import workouts as workout_service
+from data import workouts as workout_service
 
 router = APIRouter(prefix="/workouts", tags=["Workouts"])
 
@@ -38,7 +38,7 @@ async def workout_sets(
 # VIEW A SINGLE WORKOUT
 @router.get("/{id}")
 async def single_workout(id: Annotated[int, Path(title="Workout id", ge=1)]):
-    return workout_service.get_single(id)
+    return workout_service.get_one(id)
 
 
 # VIEW A SINGLE WORKOUT SET
@@ -79,7 +79,7 @@ async def add_workout_sets(
 async def update_workout(
     body: WorkoutBody, id: Annotated[int, Path(title="Workout id", ge=1)]
 ):
-    return workout_service.replace(body, id)
+    return workout_service.modify(body, id)
 
 
 @router.put("/{workout_id}/sets/{id}")

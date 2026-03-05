@@ -2,12 +2,15 @@ from pydantic import BaseModel, Field
 
 
 class WorkoutBase(BaseModel):
-    id: int | None = None
     name: str = Field(max_length=20)
     user_id: int
     scheduled_date: str = Field(max_length=200)
     completed_at: str | None = Field(max_length=200)
     total_duration: int
+
+
+class WorkoutModel(WorkoutBase):
+    id: int | None = None
 
 
 class WorkoutBody(WorkoutBase):
