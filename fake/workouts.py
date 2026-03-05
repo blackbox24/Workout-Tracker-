@@ -1,5 +1,4 @@
 from models.workouts import WorkoutBody
-from fastapi.exceptions import HTTPException
 from typing import List
 
 PREV_ID: int = 0
@@ -19,11 +18,11 @@ def get_all() -> List[WorkoutBody]:
     return workouts
 
 
-def get_single(id: int) -> WorkoutBody | HTTPException:
+def get_single(id: int) -> WorkoutBody | None:
     for workout in workouts:
         if workout.id == id:
             return workout
-    raise HTTPException(status_code=404, detail="Workout not found")
+    return None
 
 
 def create(workout: WorkoutBody) -> WorkoutBody:
@@ -34,21 +33,21 @@ def create(workout: WorkoutBody) -> WorkoutBody:
     return workout
 
 
-def modify(workout: WorkoutBody, id: int) -> WorkoutBody | HTTPException:
+def modify(workout: WorkoutBody, id: int) -> WorkoutBody | None:
     for i in range(0, len(workouts)):
         if workouts[i].id == id:
             workouts[i] = workout
             return workout
-    raise HTTPException(status_code=404, detail="Workout not found")
+    return None
 
 
-def replace(workout: WorkoutBody, id: int) -> WorkoutBody | HTTPException:
+def replace(workout: WorkoutBody, id: int) -> WorkoutBody | None:
     for i in range(0, len(workouts)):
         if workouts[i].id == id:
             workout.id = id
             workouts[i] = workout
             return workout
-    raise HTTPException(status_code=404, detail="Workout not found")
+    return None
 
 
 def delete(id: int) -> str | None:
@@ -56,4 +55,4 @@ def delete(id: int) -> str | None:
         if _workout.id == id:
             workouts.remove(workouts[id])
             return "Deleted"
-    raise HTTPException(status_code=404, detail="Workout not found")
+    return None
