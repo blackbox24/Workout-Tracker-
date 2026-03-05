@@ -1,18 +1,20 @@
 from fastapi import APIRouter, Path
 from typing import Annotated
 from models.workouts import WorkoutBody, WorkoutSetBody
+from fake import workouts as workout_service
 
 router = APIRouter(prefix="/workouts", tags=["Workouts"])
 
 
-@router.get("/api/workouts/")
+@router.get("/")
 async def workout(limit: int = 8, page: int = 1):
-    data = workout
-    return {"message": "Successful", "limit": limit, "page": page, "data": data}
+    # data = workout
+    # return {"message": "Successful", "limit": limit, "page": page, "data": data}
+    return workout_service.get_all()
 
 
 # VIEW ALL WORKOUT SETS
-@router.get("/api/workouts/{id}/sets")
+@router.get("/{id}/sets")
 async def workout_sets(
     id: Annotated[
         int,
@@ -34,13 +36,13 @@ async def workout_sets(
 
 
 # VIEW A SINGLE WORKOUT
-@router.get("/api/workouts/{id}")
+@router.get("/{id}")
 async def single_workout(id: Annotated[int, Path(title="Workout id", ge=1)]):
-    return {"id": id}
+    return workout_service.get_single(id)
 
 
 # VIEW A SINGLE WORKOUT SET
-@router.get("/api/workouts/{workout_id}/sets/{id}")
+@router.get("/{workout_id}/sets/{id}")
 async def single_workout_sets(
     workout_id: Annotated[int, Path(title="Workout id", ge=1)],
     id: Annotated[int, Path(title="Workout set id", ge=1)],
@@ -54,13 +56,13 @@ async def single_workout_sets(
 
 
 # ADD WORKOUT
-@router.post("/api/workouts/")
+@router.post("/")
 async def add_workout(body: WorkoutBody):
-    return {"message": "Successful", "workout": body}
+    return workout_service.create(body)
 
 
 # ADD WORKOUT SET
-@router.post("/api/workouts/{workout_id}/sets/")
+@router.post("/{workout_id}/sets/")
 async def add_workout_sets(
     workout_id: Annotated[int, Path(title="Workout id", ge=1)], body: WorkoutSetBody
 ):
@@ -73,14 +75,14 @@ async def add_workout_sets(
 
 
 # UPDATE WORKOUT
-@router.put("/api/workouts/{id}/")
+@router.put("/{id}/")
 async def update_workout(
     body: WorkoutBody, id: Annotated[int, Path(title="Workout id", ge=1)]
 ):
-    return {"message": "Successful", "id": id, "workout": body}
+    return workout_service.replace(body, id)
 
 
-@router.put("/api/workouts/{workout_id}/sets/{id}")
+@router.put("/{workout_id}/sets/{id}")
 async def update_workout_sets(
     workout_id: Annotated[int, Path(title="Workout id", ge=1)],
     id: Annotated[int, Path(title="Workout set id", ge=1)],
@@ -95,15 +97,12 @@ async def update_workout_sets(
 
 
 # DELETE WORKOUT
-@router.delete("/api/workouts/{id}/")
+@router.delete("/{id}/")
 async def delete_workout(id: Annotated[int, Path(title="Workout id", ge=1)]):
-    return {
-        "message": "Successfully deleted workout",
-        "id": id,
-    }
+    return workout_service.delete(id)
 
 
-@router.delete("/api/workouts/{workout_id}/sets/{id}")
+@router.delete("/{workout_id}/sets/{id}")
 async def delete_workout_sets(
     workout_id: Annotated[int, Path(title="Workout id", ge=1)],
     id: Annotated[
