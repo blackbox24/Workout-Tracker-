@@ -34,7 +34,7 @@ def create(workout: WorkoutBody) -> WorkoutBody:
     return workout
 
 
-def modify(workout: WorkoutBody, id: int) -> WorkoutBody | None:
+def modify(workout: WorkoutBody, id: int) -> WorkoutBody | HTTPException:
     for i in range(0, len(workouts)):
         if workouts[i].id == id:
             workouts[i] = workout
@@ -42,7 +42,7 @@ def modify(workout: WorkoutBody, id: int) -> WorkoutBody | None:
     raise HTTPException(status_code=404, detail="Workout not found")
 
 
-def replace(workout: WorkoutBody, id: int) -> WorkoutBody | None:
+def replace(workout: WorkoutBody, id: int) -> WorkoutBody | HTTPException:
     for i in range(0, len(workouts)):
         if workouts[i].id == id:
             workout.id = id
