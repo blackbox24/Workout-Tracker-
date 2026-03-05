@@ -1,4 +1,6 @@
+import pytest
 from models.workouts import WorkoutModel
+from fastapi.exceptions import HTTPException
 from services import workouts
 
 sample = WorkoutModel(
@@ -22,5 +24,7 @@ def test_get_exists():
 
 
 def test_get_missing():
-    resp = workouts.get_one(3)
-    assert resp is None
+    with pytest.raises(HTTPException) as exec_info:
+        workouts.get_one(3)
+
+    assert exec_info.value.status_code == 404

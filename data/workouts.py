@@ -1,4 +1,5 @@
 from models.workouts import WorkoutBody, WorkoutModel
+from fastapi.exceptions import HTTPException
 from . import curs
 
 curs.execute(
@@ -40,7 +41,7 @@ def get_one(id: int) -> WorkoutModel | None:
     row = curs.fetchone()
     if row:
         return row_to_model(row)
-    return None
+    raise HTTPException(status_code=404, detail="Workout cannot be found")
 
 
 def get_all() -> list[WorkoutModel]:
@@ -56,7 +57,10 @@ def create(workout: WorkoutBody) -> WorkoutBody:
         (:name, :user_id, :scheduled_date, :completed_at, :total_duration)    
     """
     params = model_to_dict(workout)
-    curs.execute(stmt, params)
+    try:
+        curs.execute(stmt, params)
+    except HTTPException:
+        raise HTTPException(status_code=401, detail="Workout cannot be found")
     return workout
 
 
@@ -73,10 +77,17 @@ def modify(workout: WorkoutBody, id: int) -> WorkoutBody:
     params = model_to_dict(workout)
     params["id"] = id
     curs.execute(stmt, params)
-    return workout
+    if curs.rowcount == 0:
+        return workout
+
+    raise HTTPException(status_code=404, detail="Workout cannot be found")
 
 
 def delete(id: int):
     stmt = "DELETE FROM workouts WHERE id = :id"
     params = {"id": id}
     curs.execute(stmt, params)
+    if curs.rowcount == 1:
+        return None
+
+    raise HTTPException(status_code=404, detail="Workout cannot be found")
