@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from models.users import LoginBody, SignUpBody
 
-router = APIRouter(prefix="users", tags=["users"])
+router = APIRouter(prefix="/users", tags=["Auth"])
 
 
 # SIGN UP

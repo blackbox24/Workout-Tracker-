@@ -2,7 +2,7 @@ from fastapi import APIRouter, Path
 from typing import Annotated
 from models.workouts import WorkoutBody, WorkoutSetBody
 
-router = APIRouter(prefix="workouts", tags=["workouts"])
+router = APIRouter(prefix="/workouts", tags=["Workouts"])
 
 
 @router.get("/api/workouts/")
