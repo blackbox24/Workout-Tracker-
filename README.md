@@ -149,3 +149,12 @@ Headers Authorization: "Bearer token"
     "total_completed_workouts":1,
     "total_workout_sets":"20",
 }
+
+### PROJECT STRUCTURE
+
+- Models -> Database Schema
+- Data -> Backend Function logic
+- Service -> Implement backend logic
+- Routers -> Routes for each backend logic
+- config -> configuraiton of backend
+- test -> Unit tests and integrated test
