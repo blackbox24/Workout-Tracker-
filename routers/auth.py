@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from fastapi.security import HTTPBasicCredentials, HTTPBasic
 from models.users import LoginBody, SignUpBody
 
@@ -6,10 +6,15 @@ router = APIRouter(prefix="/users", tags=["Auth"])
 
 basic = HTTPBasic()
 
+username: str = "nelso"
+password: str = "123"
+
 
 @router.get("/who")
 async def get_user(creds: HTTPBasicCredentials = Depends(basic)):
-    return {"username": creds.username, "password": creds.password}
+    if (creds.username == username) and (creds.password == password):
+        return {"username": creds.username, "password": creds.password}
+    raise HTTPException(status_code=401, detail="Invalid Credentials")
 
 
 # SIGN UP

@@ -9,7 +9,10 @@ dependencies = [
     "fastapi[standard]>=0.129.0",
     "gunicorn>=25.1.0",
     "httpx>=0.28.1",
+    "passlib>=1.7.4",
     "python-decouple>=3.8",
+    "python-jose[cryptography]>=3.5.0",
+    "python-multipart>=0.0.22",
     "requests>=2.32.5",
     "uvicorn>=0.41.0",
 ]
