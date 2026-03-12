@@ -7,7 +7,7 @@ requires-python = ">=3.13"
 dependencies = [
     "bcrypt>=5.0.0",
     "db-sqlite3>=0.0.1",
-    "fastapi[standard]>=0.129.0",
+    "fastapi[standard]>=0.135.1",
     "gunicorn>=25.1.0",
     "httpx>=0.28.1",
     "passlib>=1.7.4",
@@ -24,5 +24,8 @@ dev = [
     "pre-commit>=4.5.1",
     "pytest>=9.0.2",
     "python-decouple-stubs>=3.8.0.4",
-    "ruff>=0.15.2",
+    "ruff>=0.15.5",
+    "types-passlib>=1.7.7.20260211",
+    "types-python-jose>=3.5.0.20250531",
+    "types-ujson>=5.10.0.20250822",
 ]

@@ -8,6 +8,7 @@ BASE_DIR = Path(__file__).resolve().parents[0].parent
 
 class Settings(BaseSettings):
     database_url: str = Field(..., description="database url")
+    algorithm: str = Field(description="", default="HS256")
     secret_key: str = Field(..., min_length=32)
     debug: bool = Field(default=False)
     api_version: str = Field(default="v1")

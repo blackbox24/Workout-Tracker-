@@ -9,7 +9,7 @@ class Roles(Enum):
 
 class UserBase(BaseModel):
     first_name: str = Field(max_length=20)
-    middle_name: str | None = Field(max_length=20)
+    middle_name: str | None = Field(max_length=20, default=None)
     last_name: str = Field(max_length=20)
     role: str | Roles = Field(max_length=20)
     username: str = Field(max_length=20)
