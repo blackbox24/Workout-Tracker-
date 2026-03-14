@@ -1,12 +1,13 @@
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, ConfigDict, EmailStr
 from datetime import datetime
 from typing import Optional
+from enum import Enum
 
 
 # ========== User Schemas ==========
-class Roles:
-    user: str = "user"
-    admin: str = "admin"
+class Roles(str, Enum):
+    user = "user"
+    admin = "admin"
 
 
 class UserCreate(BaseModel):
@@ -36,9 +37,16 @@ class PasswordChange(BaseModel):
     password2: str
 
 
+class LoginModel(BaseModel):
+    username: str
+    password: str
+
+
 class UserResponse(BaseModel):
     id: int
     email: str
     username: str
     role: str
     created_at: datetime
+
+    model_config = ConfigDict(from_attributes=True)

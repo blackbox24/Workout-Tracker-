@@ -12,13 +12,13 @@ from sqlalchemy import (
 )
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
-from .database import Base
+from app.database import Base
 
 
 class User(Base):
     __tablename__ = "users"
 
-    id = Column(BigInteger, primary_key=True, index=True, autoincrement=True)
+    id = Column(BigInteger, primary_key=True, autoincrement=True)
 
     first_name = Column(String(255))
     middle_name = Column(String(255), nullable=True)
@@ -38,6 +38,7 @@ class User(Base):
         "Workout", back_populates="user", cascade="all, delete-orphan"
     )
     workout_sets = relationship("WorkoutSet", back_populates="user")
+    # exercises = relationship("Exercise", back_populates="user")
 
 
 class Exercise(Base):
@@ -69,10 +70,10 @@ class Exercise(Base):
     workout_sets = relationship("WorkoutSet", back_populates="exercise")
 
     # Relationships
-    user = relationship("User", back_populates="workouts")
-    sets = relationship(
-        "WorkoutSet", back_populates="workout", cascade="all, delete-orphan"
-    )
+    # user = relationship("User", back_populates="exercises")
+    # sets = relationship(
+    #     "WorkoutSet", back_populates="workout", cascade="all, delete-orphan"
+    # )
 
 
 class Workout(Base):
@@ -112,6 +113,9 @@ class WorkoutSet(Base):
 
     __table_args__ = (CheckConstraint("rpe >= 0 AND rpe <= 10", name="chk_rpe_range"),)
 
-    user = relationship("User", back_populates="workout_sets")
-    workout = relationship("Workout", back_populates="sets")
+    user = relationship(
+        "User",
+        back_populates="workout_sets",
+    )
+    # workout = relationship("Workout", back_populates="sets")
     exercise = relationship("Exercise", back_populates="workout_sets")

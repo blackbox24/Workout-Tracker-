@@ -1,7 +1,10 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.routers import auth
+from app.database import Base, engine
 
 
+Base.metadata.create_all(bind=engine)
 app = FastAPI(title="Workout Backend")
 
 origins = [
@@ -18,6 +21,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(auth.router, tags=["auth"])
 
 
 @app.get("/")
