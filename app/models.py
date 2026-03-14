@@ -11,10 +11,11 @@ from sqlalchemy import (
     CheckConstraint,
 )
 from sqlalchemy.sql import func
+from sqlalchemy.orm import relationship
 from .database import Base
 
 
-class Users(Base):
+class User(Base):
     __tablename__ = "users"
 
     id = Column(BigInteger, primary_key=True, index=True, autoincrement=True)
@@ -33,8 +34,13 @@ class Users(Base):
 
     created_at = Column(DateTime, server_default=func.now())
 
+    workouts = relationship(
+        "Workout", back_populates="user", cascade="all, delete-orphan"
+    )
+    workout_sets = relationship("WorkoutSet", back_populates="user")
 
-class Exercises(Base):
+
+class Exercise(Base):
     __tablename__ = "exercises"
 
     id = Column(BigInteger, primary_key=True, index=True, autoincrement=True)
@@ -60,8 +66,16 @@ class Exercises(Base):
 
     created_at = Column(DateTime, server_default=func.now())
 
+    workout_sets = relationship("WorkoutSet", back_populates="exercise")
 
-class Workouts(Base):
+    # Relationships
+    user = relationship("User", back_populates="workouts")
+    sets = relationship(
+        "WorkoutSet", back_populates="workout", cascade="all, delete-orphan"
+    )
+
+
+class Workout(Base):
     __tablename__ = "workouts"
 
     id = Column(BigInteger, primary_key=True, autoincrement=True)
@@ -75,8 +89,10 @@ class Workouts(Base):
 
     created_at = Column(DateTime, server_default=func.now())
 
+    user = relationship("User", back_populates="workouts")
 
-class WorkoutSets(Base):
+
+class WorkoutSet(Base):
     __tablename__ = "workout_sets"
 
     id = Column(BigInteger, primary_key=True, autoincrement=True)
@@ -95,3 +111,7 @@ class WorkoutSets(Base):
     created_at = Column(DateTime, server_default=func.now())
 
     __table_args__ = (CheckConstraint("rpe >= 0 AND rpe <= 10", name="chk_rpe_range"),)
+
+    user = relationship("User", back_populates="workout_sets")
+    workout = relationship("Workout", back_populates="sets")
+    exercise = relationship("Exercise", back_populates="workout_sets")
