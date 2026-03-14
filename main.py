@@ -1,10 +1,6 @@
 from fastapi import FastAPI
-from routers import auth, workouts
 
 app = FastAPI(title="Workout Backend")
-
-app.include_router(auth.router)
-app.include_router(workouts.router)
 
 
 @app.get("/")
