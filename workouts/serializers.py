@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Exercise, Workout
+from .models import Comments, Exercise, Workout
 
 
 class ExerciseSerializer(serializers.ModelSerializer):
@@ -42,3 +42,9 @@ class WorkoutSerializer(serializers.ModelSerializer):
         workout = Workout.objects.create(**validated_data)
         workout.exercises.set(exercises_data)
         return workout
+
+
+class CommentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Comments
+        fields = ["user_id", "workout_id", "comment"]

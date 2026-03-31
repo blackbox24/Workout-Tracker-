@@ -55,3 +55,12 @@ class Workout(models.Model):
 
     def __str__(self) -> str:
         return f"{self.name} - {self.user.username}"
+
+
+class Comments(models.Model):
+    user_id = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    workout_id = models.ForeignKey(Workout, on_delete=models.CASCADE)
+    comment = models.TextField()
+
+    def __str__(self) -> str:
+        return f"{self.comment[0:20]}..."
