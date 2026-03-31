@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 
 
@@ -30,3 +31,27 @@ class Exercise(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+
+class Workout(models.Model):
+    # Django handles the ID field automatically as BigAutoField
+    name = models.CharField(max_length=100)
+
+    # Standard practice to reference the User model
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name="workouts"
+    )
+
+    scheduled_date = models.DateTimeField(null=True, blank=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+
+    exercises: models.ManyToManyField = models.ManyToManyField(
+        "Exercise", related_name="workouts", blank=True
+    )
+    total_duration = models.IntegerField(default=0)  # Duration in minutes
+
+    # auto_now_add handles the DEFAULT CURRENT_TIMESTAMP logic
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self) -> str:
+        return f"{self.name} - {self.user.username}"
