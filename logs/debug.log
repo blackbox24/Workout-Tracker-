@@ -25,3 +25,10 @@ INFO 2026-03-31 17:01:25,078 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT T
 INFO 2026-03-31 17:01:25,837 autoreload Watching for file changes with StatReloader
 INFO 2026-03-31 17:01:36,680 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\config\settings.py changed, reloading.
 INFO 2026-03-31 17:01:47,283 autoreload Watching for file changes with StatReloader
+WARNING 2026-03-31 19:06:22,101 log Bad Request: /api/accounts/signup/
+WARNING 2026-03-31 19:06:22,275 log Bad Request: /api/accounts/signup/
+WARNING 2026-03-31 19:06:22,279 log Bad Request: /api/accounts/signup/
+WARNING 2026-03-31 19:06:54,462 log Bad Request: /api/accounts/signup/
+WARNING 2026-03-31 19:06:54,470 log Bad Request: /api/accounts/signup/
+WARNING 2026-03-31 19:07:23,401 log Bad Request: /api/accounts/signup/
+WARNING 2026-03-31 19:07:23,408 log Bad Request: /api/accounts/signup/

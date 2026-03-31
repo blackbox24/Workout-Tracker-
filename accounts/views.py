@@ -30,6 +30,7 @@ class SignUpView(APIView):
                 last_name=data.get("last_name", ""),
             )
             user.set_password(data.get("password1"))
+            user.save()
             refresh = RefreshToken.for_user(user)
             return Response(
                 {
