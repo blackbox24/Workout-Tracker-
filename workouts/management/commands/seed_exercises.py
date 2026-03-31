@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 
-from exercise.models import Exercise
+from workouts.models import Exercise
 
 
 class Command(BaseCommand):
