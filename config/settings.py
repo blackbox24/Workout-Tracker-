@@ -90,6 +90,7 @@ DJANGO_APPS = [
 CUSTOM_APPS = [
     # Add your custom apps here
     "workouts",
+    "accounts",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS
