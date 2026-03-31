@@ -13,6 +13,16 @@ anyio==4.12.1
     #   httpx
     #   starlette
     #   watchfiles
+asgiref==3.11.1
+    # via
+    #   django
+    #   django-cors-headers
+attrs==26.1.0
+    # via
+    #   jsonschema
+    #   referencing
+bcrypt==5.0.0
+    # via workout-tracker
 certifi==2026.1.4
     # via
     #   httpcore
@@ -38,15 +48,42 @@ db==0.1.1
     # via db-sqlite3
 db-sqlite3==0.0.1
     # via workout-tracker
+django==6.0.3
+    # via
+    #   django-cors-headers
+    #   django-redis
+    #   django-stubs
+    #   django-stubs-ext
+    #   djangorestframework
+    #   djangorestframework-simplejwt
+    #   drf-spectacular
+    #   workout-tracker
+django-cors-headers==4.9.0
+    # via workout-tracker
+django-redis==6.0.0
+    # via workout-tracker
+django-stubs==6.0.1
+    # via workout-tracker
+django-stubs-ext==6.0.1
+    # via django-stubs
+djangorestframework==3.17.1
+    # via
+    #   djangorestframework-simplejwt
+    #   drf-spectacular
+    #   workout-tracker
+djangorestframework-simplejwt==5.5.1
+    # via workout-tracker
 dnspython==2.8.0
     # via email-validator
+drf-spectacular==0.29.0
+    # via workout-tracker
 ecdsa==0.19.1
     # via python-jose
 email-validator==2.3.0
     # via
     #   fastapi
     #   pydantic
-fastapi==0.129.0
+fastapi==0.135.2
     # via workout-tracker
 fastapi-cli==0.0.23
     # via fastapi
@@ -54,7 +91,9 @@ fastapi-cloud-cli==0.13.0
     # via fastapi-cli
 fastar==0.8.0
     # via fastapi-cloud-cli
-gunicorn==25.1.0
+greenlet==3.3.2 ; platform_machine == 'AMD64' or platform_machine == 'WIN32' or platform_machine == 'aarch64' or platform_machine == 'amd64' or platform_machine == 'ppc64le' or platform_machine == 'win32' or platform_machine == 'x86_64'
+    # via sqlalchemy
+gunicorn==25.3.0
     # via workout-tracker
 h11==0.16.0
     # via
@@ -75,8 +114,14 @@ idna==3.11
     #   email-validator
     #   httpx
     #   requests
+inflection==0.5.1
+    # via drf-spectacular
 jinja2==3.1.6
     # via fastapi
+jsonschema==4.26.0
+    # via drf-spectacular
+jsonschema-specifications==2025.9.1
+    # via jsonschema
 markdown-it-py==4.0.0
     # via rich
 markupsafe==3.0.3
@@ -86,6 +131,10 @@ mdurl==0.1.2
 packaging==26.0
     # via gunicorn
 passlib==1.7.4
+    # via workout-tracker
+psycopg2==2.9.11
+    # via workout-tracker
+psycopg2-binary==2.9.11
     # via workout-tracker
 pyasn1==0.6.2
     # via
@@ -107,6 +156,8 @@ pydantic-settings==2.13.1
     # via fastapi
 pygments==2.19.2
     # via rich
+pyjwt==2.12.1
+    # via djangorestframework-simplejwt
 python-decouple==3.8
     # via workout-tracker
 python-dotenv==1.2.1
@@ -120,8 +171,18 @@ python-multipart==0.0.22
     #   fastapi
     #   workout-tracker
 pyyaml==6.0.3
-    # via uvicorn
-requests==2.32.5
+    # via
+    #   drf-spectacular
+    #   uvicorn
+redis==7.4.0
+    # via
+    #   django-redis
+    #   workout-tracker
+referencing==0.37.0
+    # via
+    #   jsonschema
+    #   jsonschema-specifications
+requests==2.33.1
     # via workout-tracker
 rich==14.3.3
     # via
@@ -133,6 +194,10 @@ rich-toolkit==0.19.4
     #   fastapi-cloud-cli
 rignore==0.7.6
     # via fastapi-cloud-cli
+rpds-py==0.30.0
+    # via
+    #   jsonschema
+    #   referencing
 rsa==4.9.1
     # via python-jose
 sentry-sdk==2.53.0
@@ -141,30 +206,43 @@ shellingham==1.5.4
     # via typer
 six==1.17.0
     # via ecdsa
+sqlalchemy==2.0.48
+    # via workout-tracker
+sqlparse==0.5.5
+    # via django
 starlette==0.52.1
     # via fastapi
 typer==0.24.0
     # via
     #   fastapi-cli
     #   fastapi-cloud-cli
+types-pyyaml==6.0.12.20250915
+    # via django-stubs
 typing-extensions==4.15.0
     # via
+    #   django-stubs
+    #   django-stubs-ext
     #   fastapi
     #   pydantic
     #   pydantic-core
     #   pydantic-extra-types
     #   rich-toolkit
+    #   sqlalchemy
     #   typing-inspection
 typing-inspection==0.4.2
     # via
     #   fastapi
     #   pydantic
     #   pydantic-settings
+tzdata==2025.3 ; sys_platform == 'win32'
+    # via django
+uritemplate==4.2.0
+    # via drf-spectacular
 urllib3==2.6.3
     # via
     #   requests
     #   sentry-sdk
-uvicorn==0.41.0
+uvicorn==0.42.0
     # via
     #   fastapi
     #   fastapi-cli

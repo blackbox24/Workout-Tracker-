@@ -26,4 +26,4 @@ USER myuser
 EXPOSE 9000
 
 
-CMD ["gunicorn", "-w", "4", "-k", "uvicorn.workers.UvicornWorker", "main:app", "--bind", "0.0.0.0:9000"]
+CMD ["gunicorn","config.wsgi:application", "--bind", "0.0.0.0:9000"]
