@@ -86,12 +86,13 @@ DJANGO_APPS = [
 ]
 
 
-# # Custom apps
-# CUSTOM_APPS = [
-#     # Add your custom apps here
-# ]
+# Custom apps
+CUSTOM_APPS = [
+    # Add your custom apps here
+    "exercise",
+]
 
-INSTALLED_APPS = DJANGO_APPS  # CUSTOM_APPS
+INSTALLED_APPS = DJANGO_APPS + CUSTOM_APPS
 
 
 # AUTHENTICATION_BACKENDS  = [

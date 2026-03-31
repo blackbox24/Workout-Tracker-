@@ -28,5 +28,5 @@ class Exercise(models.Model):
         max_length=20, choices=MuscleGroup.choices, default=MuscleGroup.CHEST
     )
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
