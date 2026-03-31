@@ -26,6 +26,7 @@ dependencies = [
     "django-stubs>=6.0.1",
     "redis>=7.4.0",
     "django-redis>=6.0.0",
+    "drf-spectacular>=0.29.0",
 ]
 
 [dependency-groups]

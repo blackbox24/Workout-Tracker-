@@ -1,0 +1,27 @@
+INFO 2026-03-31 16:57:33,281 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 16:58:01,427 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\config\settings.py changed, reloading.
+INFO 2026-03-31 16:58:02,272 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 16:58:18,476 log "GET /api/schema/swagger-ui/ HTTP/1.1" 200 4649
+INFO 2026-03-31 16:58:20,708 log "GET /api/schema/ HTTP/1.1" 200 201
+INFO 2026-03-31 16:58:37,406 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\config\settings.py changed, reloading.
+INFO 2026-03-31 16:58:38,151 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 16:58:47,011 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\config\settings.py changed, reloading.
+INFO 2026-03-31 16:58:47,820 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 16:58:49,402 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\config\settings.py changed, reloading.
+INFO 2026-03-31 16:58:50,163 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 16:58:53,802 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\config\settings.py changed, reloading.
+INFO 2026-03-31 16:58:54,489 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 16:59:00,213 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\config\settings.py changed, reloading.
+INFO 2026-03-31 16:59:00,912 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 16:59:03,117 log "GET /api/schema/swagger-ui/ HTTP/1.1" 200 4644
+INFO 2026-03-31 16:59:03,805 log "GET /api/schema/ HTTP/1.1" 200 6772
+INFO 2026-03-31 17:00:40,057 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\config\settings.py changed, reloading.
+INFO 2026-03-31 17:00:40,791 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 17:01:05,059 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\config\settings.py changed, reloading.
+INFO 2026-03-31 17:01:05,750 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 17:01:08,374 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\config\settings.py changed, reloading.
+INFO 2026-03-31 17:01:09,089 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 17:01:25,078 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\config\settings.py changed, reloading.
+INFO 2026-03-31 17:01:25,837 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 17:01:36,680 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\config\settings.py changed, reloading.
+INFO 2026-03-31 17:01:47,283 autoreload Watching for file changes with StatReloader
