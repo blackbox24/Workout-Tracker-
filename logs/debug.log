@@ -32,3 +32,47 @@ WARNING 2026-03-31 19:06:54,462 log Bad Request: /api/accounts/signup/
 WARNING 2026-03-31 19:06:54,470 log Bad Request: /api/accounts/signup/
 WARNING 2026-03-31 19:07:23,401 log Bad Request: /api/accounts/signup/
 WARNING 2026-03-31 19:07:23,408 log Bad Request: /api/accounts/signup/
+INFO 2026-03-31 19:56:48,362 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 19:57:01,488 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\urls.py changed, reloading.
+INFO 2026-03-31 19:57:02,181 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 19:57:20,605 log "GET /api/schema/swagger-ui/ HTTP/1.1" 200 4644
+INFO 2026-03-31 19:57:20,961 log "GET /api/schema/ HTTP/1.1" 200 14802
+WARNING 2026-03-31 19:57:30,177 log Unauthorized: /api/workouts/
+WARNING 2026-03-31 19:57:30,177 log "POST /api/workouts/ HTTP/1.1" 401 58
+INFO 2026-03-31 20:00:07,754 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:00:08,523 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:00:11,210 log "GET /api/schema/swagger-ui/ HTTP/1.1" 200 4644
+INFO 2026-03-31 20:00:11,525 log "GET /api/schema/ HTTP/1.1" 200 19968
+WARNING 2026-03-31 20:00:53,020 log Unauthorized: /api/workouts/
+WARNING 2026-03-31 20:00:53,021 log "POST /api/workouts/ HTTP/1.1" 401 58
+INFO 2026-03-31 20:46:03,185 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:46:04,892 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:46:09,814 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:46:10,970 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:46:21,939 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:46:22,677 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:46:30,583 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:46:31,324 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:46:36,099 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:46:36,946 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:46:38,711 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:46:39,436 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:46:50,342 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:46:51,126 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:46:52,912 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:46:53,645 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:46:58,386 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:46:59,231 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:47:00,986 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:47:01,863 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:47:07,899 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:47:08,929 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:47:15,816 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:47:16,553 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:47:20,364 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:47:21,161 autoreload Watching for file changes with StatReloader
+WARNING 2026-03-31 20:50:49,421 log Bad Request: /api/accounts/signup/
+WARNING 2026-03-31 20:50:49,431 log Bad Request: /api/accounts/signup/
+WARNING 2026-03-31 20:51:25,668 log Bad Request: /api/accounts/signup/
+WARNING 2026-03-31 20:51:25,677 log Bad Request: /api/accounts/signup/
+WARNING 2026-03-31 20:51:28,143 log Unauthorized: /api/workouts/
