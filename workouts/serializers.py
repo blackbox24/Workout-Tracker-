@@ -48,3 +48,5 @@ class CommentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Comments
         fields = ["user_id", "workout_id", "comment"]
+
+        read_only_fields = ["user_id", "workout_id"]

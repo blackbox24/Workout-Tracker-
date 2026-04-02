@@ -116,3 +116,10 @@ class WorkoutAPITests(APITestCase):
         response = self.client.delete(url)
 
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
+    def test_comment_workout_success(self):
+        url = reverse("comment_workout_view", args=[self.user_workout.pk])
+
+        response = self.client.post(url, data={"comment": "Nice workouts"})
+
+        self.assertEqual(response.status_code, status.HTTP_201_CREATED)
