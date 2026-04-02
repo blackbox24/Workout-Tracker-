@@ -13,4 +13,5 @@ urlpatterns = [
         name="update_workout_schedule_view",
     ),
     path("<int:id>/comments/", views.CommentWorkoutView.as_view(), name="comment_workout_view"),
+    path("reports/", views.GenerateReportView.as_view(), name="generate_workout_report_view"),
 ]

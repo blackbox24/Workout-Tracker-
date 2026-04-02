@@ -1,3 +1,4 @@
+from django.db.models import Count
 from django.db.models.query import QuerySet
 from rest_framework import status
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
@@ -84,3 +85,27 @@ class UpdateScheduleWorkoutView(APIView):
             workout.save()
             return Response({"data": serializer.data}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class GenerateReportView(APIView):
+    permission_classes = (IsAuthenticated,)
+
+    def get(self, request, *args, **kwargs):
+        if request.user is None:
+            return Response(
+                {"detail": "No Authentication providered"}, status=status.HTTP_401_UNAUTHORIZED
+            )
+
+        data = {"total_workouts": 0, "total_completed_workouts": 0, "total_workout_sets": 0}
+        # filter users based on authenticated user
+        workouts = Workout.objects.filter(user=request.user.pk)
+
+        # Total number of workouts
+        data["total_workouts"] = workouts.aggregate(count=Count("id"))["count"]
+        # Total number of workouts where completed_at is not null
+        data["total_completed_workouts"] = len(workouts.exclude(completed_at=None))
+
+        # total number of workouts using distinct names
+        data["total_workout_sets"] = workouts.aggregate(count=Count("name", distinct=True))["count"]
+
+        return Response(data, status=status.HTTP_200_OK)

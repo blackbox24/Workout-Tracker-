@@ -143,3 +143,14 @@ class WorkoutAPITests(APITestCase):
         self.assertEqual(workout.exercises.count(), 1)
         self.assertTrue(workout.scheduled_date != prev)
         self.assertIn(self.ex1, workout.exercises.all())
+
+    def test_generate_workout_report_success(self):
+        self.client.force_authenticate(user=self.user2)
+        url = reverse("generate_workout_report_view")
+
+        response = self.client.get(url)
+        data = response.json()
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+        self.assertEqual(data["total_workouts"], 1)
+        self.assertEqual(data["total_completed_workouts"], 0)
+        self.assertEqual(data["total_workout_sets"], 1)
