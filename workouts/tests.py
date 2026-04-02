@@ -1,7 +1,6 @@
-from datetime import datetime
-
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django.utils import timezone
 from rest_framework import status
 from rest_framework.test import APITestCase
 
@@ -23,7 +22,12 @@ class WorkoutAPITests(APITestCase):
         self.ex2 = Exercise.objects.create(name="Squat", category="Strength", muscle_group="Quads")
 
         self.user_workout, _ = Workout.objects.get_or_create(
-            defaults={"name": "Morning Routine", "total_duration": 30, "user": self.user2}
+            defaults={
+                "name": "Morning Routine",
+                "total_duration": 30,
+                "user": self.user2,
+                "scheduled_date": str(timezone.now()),
+            }
         )
 
         self.user_workout.exercises.add(self.ex1)
@@ -90,7 +94,7 @@ class WorkoutAPITests(APITestCase):
         self.client.force_authenticate(user=self.user2)
         url = reverse("retrieve_update_delete_workout_view", args=[self.user_workout.pk])
 
-        data = {"total_duration": 31, "completed_at": str(datetime.now())}
+        data = {"total_duration": 31, "completed_at": str(timezone.now())}
 
         response = self.client.patch(url, data=data)
 
@@ -123,3 +127,19 @@ class WorkoutAPITests(APITestCase):
         response = self.client.post(url, data={"comment": "Nice workouts"})
 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
+
+    def test_update_patch_workout_schedule_success(self):
+        self.client.force_authenticate(user=self.user2)
+        url = reverse("update_workout_schedule_view", args=[self.user_workout.pk])
+
+        data = {"scheduled_date": str(timezone.now())}
+
+        response = self.client.patch(url, data=data)
+        prev = self.user_workout.scheduled_date
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        workout = Workout.objects.get(id=self.user_workout.pk)
+        self.assertEqual(workout.user, self.user2)  # Confirms perform_create logic
+        self.assertEqual(workout.exercises.count(), 1)
+        self.assertTrue(workout.scheduled_date != prev)
+        self.assertIn(self.ex1, workout.exercises.all())

@@ -7,7 +7,7 @@ from rest_framework.views import APIView
 
 from .models import Workout
 from .permissions import IsWorkoutOwner
-from .serializers import CommentSerializer, WorkoutSerializer
+from .serializers import CommentSerializer, WorkoutScheduledDate, WorkoutSerializer
 
 
 class ListCreateWorkoutView(ListCreateAPIView):
@@ -61,4 +61,26 @@ class CommentWorkoutView(APIView):
                 )
             serializer.save(user_id=request.user, workout_id=workout)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class UpdateScheduleWorkoutView(APIView):
+    permission_classes = (
+        IsAuthenticated,
+        IsWorkoutOwner,
+    )
+    serializer_class = WorkoutScheduledDate
+
+    def patch(self, request, id, *args, **kwargs):
+        try:
+            workout = Workout.objects.get(id=id)
+        except Workout.DoesNotExist:
+            return Response({"error": "Workout not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        serializer = self.serializer_class(data=request.data)
+        if serializer.is_valid():
+            scheduled_date = serializer.validated_data.get("scheduled_date")
+            workout.scheduled_date = scheduled_date
+            workout.save()
+            return Response({"data": serializer.data}, status=status.HTTP_200_OK)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

@@ -50,3 +50,7 @@ class CommentSerializer(serializers.ModelSerializer):
         fields = ["user_id", "workout_id", "comment"]
 
         read_only_fields = ["user_id", "workout_id"]
+
+
+class WorkoutScheduledDate(serializers.Serializer):
+    scheduled_date = serializers.DateTimeField(required=True)
