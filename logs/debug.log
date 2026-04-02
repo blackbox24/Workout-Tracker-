@@ -161,3 +161,47 @@ AssertionError: 'RetrieveUpdateDestroyAPIView' should either include a `queryset
 ERROR 2026-03-31 20:58:35,288 log "GET /api/workouts/1/ HTTP/1.1" 500 145
 INFO 2026-03-31 20:58:55,664 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
 INFO 2026-03-31 20:58:56,467 autoreload Watching for file changes with StatReloader
+WARNING 2026-04-02 09:57:50,452 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 09:57:50,464 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 09:57:52,874 log Unauthorized: /api/workouts/
+WARNING 2026-04-02 10:03:18,639 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:03:18,649 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:04:38,321 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:04:38,331 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:05:14,106 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:05:14,117 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:05:17,466 log Unauthorized: /api/workouts/
+WARNING 2026-04-02 10:05:38,745 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:05:38,754 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:05:57,987 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:05:57,997 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:06:19,453 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:06:19,464 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:06:22,838 log Unauthorized: /api/workouts/
+WARNING 2026-04-02 10:07:55,347 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:07:55,357 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:07:58,762 log Unauthorized: /api/workouts/
+WARNING 2026-04-02 10:09:56,465 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:09:56,477 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:09:59,868 log Unauthorized: /api/workouts/
+WARNING 2026-04-02 10:10:00,973 log Method Not Allowed: /api/workouts/
+WARNING 2026-04-02 10:13:38,358 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:13:38,368 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:13:41,682 log Unauthorized: /api/workouts/
+WARNING 2026-04-02 10:13:42,744 log Method Not Allowed: /api/workouts/
+WARNING 2026-04-02 10:14:37,734 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:14:37,744 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:14:40,055 log Method Not Allowed: /api/workouts/
+WARNING 2026-04-02 10:14:41,351 log Unauthorized: /api/workouts/
+WARNING 2026-04-02 10:17:26,469 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:17:26,479 log Bad Request: /api/accounts/signup/
+WARNING 2026-04-02 10:17:29,774 log Unauthorized: /api/workouts/
+WARNING 2026-04-02 10:18:12,007 log Unauthorized: /api/workouts/
+WARNING 2026-04-02 10:18:26,628 log Unauthorized: /api/workouts/
+WARNING 2026-04-02 10:18:38,950 log Unauthorized: /api/workouts/
+WARNING 2026-04-02 10:20:20,467 log Unauthorized: /api/workouts/
+WARNING 2026-04-02 10:22:02,154 log Unauthorized: /api/workouts/
+WARNING 2026-04-02 10:22:51,647 log Unauthorized: /api/workouts/
+WARNING 2026-04-02 10:22:53,842 log Forbidden: /api/workouts/1/
+WARNING 2026-04-02 10:23:08,811 log Unauthorized: /api/workouts/
+WARNING 2026-04-02 10:23:11,174 log Forbidden: /api/workouts/1/
