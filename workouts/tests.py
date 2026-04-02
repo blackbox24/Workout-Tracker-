@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.contrib.auth.models import User
 from django.urls import reverse
 from rest_framework import status
@@ -70,7 +72,7 @@ class WorkoutAPITests(APITestCase):
         self.assertTrue(len(workouts) > 0)
 
     def test_retrieve_workout_success(self):
-        url = reverse("retrieve_workout_view", args=[self.user_workout.pk])
+        url = reverse("retrieve_update_delete_workout_view", args=[self.user_workout.pk])
         self.client.force_authenticate(user=self.user2)
 
         response = self.client.get(url)
@@ -78,8 +80,39 @@ class WorkoutAPITests(APITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
     def test_retrieve_workout_fail(self):
-        url = reverse("retrieve_workout_view", args=[self.user_workout.pk])
+        url = reverse("retrieve_update_delete_workout_view", args=[self.user_workout.pk])
 
         response = self.client.get(url)
+
+        self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)
+
+    def test_update_patch_workout_success(self):
+        self.client.force_authenticate(user=self.user2)
+        url = reverse("retrieve_update_delete_workout_view", args=[self.user_workout.pk])
+
+        data = {"total_duration": 31, "completed_at": str(datetime.now())}
+
+        response = self.client.patch(url, data=data)
+
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        workout = Workout.objects.get(id=response.data["id"])
+        self.assertEqual(workout.user, self.user2)  # Confirms perform_create logic
+        self.assertEqual(workout.exercises.count(), 1)
+        self.assertEqual(workout.total_duration, 31)
+        self.assertIn(self.ex1, workout.exercises.all())
+
+    def test_delete_workout_success(self):
+        self.client.force_authenticate(user=self.user2)
+        url = reverse("retrieve_update_delete_workout_view", args=[self.user_workout.pk])
+
+        response = self.client.delete(url)
+
+        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
+
+    def test_delete_workout_failed(self):
+        url = reverse("retrieve_update_delete_workout_view", args=[self.user_workout.pk])
+
+        response = self.client.delete(url)
 
         self.assertEqual(response.status_code, status.HTTP_403_FORBIDDEN)

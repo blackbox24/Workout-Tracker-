@@ -1,5 +1,5 @@
 from django.db.models.query import QuerySet
-from rest_framework.generics import ListCreateAPIView, RetrieveAPIView
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.permissions import IsAuthenticated
 
 from .models import Workout
@@ -18,7 +18,7 @@ class ListCreateWorkoutView(ListCreateAPIView):
         return Workout.objects.filter(user=self.request.user.pk).prefetch_related()
 
 
-class RetrieveWorkoutView(RetrieveAPIView):
+class RetrieveWorkoutView(RetrieveUpdateDestroyAPIView):
     permission_classes = (
         IsAuthenticated,
         IsWorkoutOwner,
