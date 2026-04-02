@@ -76,3 +76,88 @@ WARNING 2026-03-31 20:50:49,431 log Bad Request: /api/accounts/signup/
 WARNING 2026-03-31 20:51:25,668 log Bad Request: /api/accounts/signup/
 WARNING 2026-03-31 20:51:25,677 log Bad Request: /api/accounts/signup/
 WARNING 2026-03-31 20:51:28,143 log Unauthorized: /api/workouts/
+INFO 2026-03-31 20:55:23,843 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:55:27,615 log "GET /api/schema/swagger-ui/ HTTP/1.1" 200 4644
+INFO 2026-03-31 20:55:27,995 log "GET /api/schema/ HTTP/1.1" 200 19968
+INFO 2026-03-31 20:55:49,532 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\urls.py changed, reloading.
+INFO 2026-03-31 20:55:50,408 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:55:52,212 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\urls.py changed, reloading.
+INFO 2026-03-31 20:55:53,224 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:55:57,741 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\urls.py changed, reloading.
+INFO 2026-03-31 20:55:58,521 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:56:16,419 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:56:17,281 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:56:19,824 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:56:20,644 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:56:22,058 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:56:22,823 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:56:27,357 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\urls.py changed, reloading.
+INFO 2026-03-31 20:56:28,229 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:56:30,853 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\urls.py changed, reloading.
+INFO 2026-03-31 20:56:31,638 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:56:34,057 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\urls.py changed, reloading.
+INFO 2026-03-31 20:56:35,038 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:56:39,070 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\urls.py changed, reloading.
+INFO 2026-03-31 20:56:40,119 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:56:41,733 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\urls.py changed, reloading.
+INFO 2026-03-31 20:56:42,707 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:56:45,467 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\urls.py changed, reloading.
+INFO 2026-03-31 20:56:46,520 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:56:55,470 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\urls.py changed, reloading.
+INFO 2026-03-31 20:56:56,339 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:57:00,296 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\urls.py changed, reloading.
+INFO 2026-03-31 20:57:01,259 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:57:03,302 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\urls.py changed, reloading.
+INFO 2026-03-31 20:57:04,209 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:57:05,918 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\urls.py changed, reloading.
+INFO 2026-03-31 20:57:06,675 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:57:08,674 log "GET /api/schema/swagger-ui/ HTTP/1.1" 200 4644
+INFO 2026-03-31 20:57:08,884 log "GET /api/schema/ HTTP/1.1" 200 23115
+INFO 2026-03-31 20:57:16,824 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\urls.py changed, reloading.
+INFO 2026-03-31 20:57:17,694 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:57:25,037 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\urls.py changed, reloading.
+INFO 2026-03-31 20:57:25,734 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:57:27,858 log "GET /api/schema/swagger-ui/ HTTP/1.1" 200 4644
+INFO 2026-03-31 20:57:28,055 log "GET /api/schema/ HTTP/1.1" 200 23115
+INFO 2026-03-31 20:58:17,040 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:58:17,798 autoreload Watching for file changes with StatReloader
+INFO 2026-03-31 20:58:24,166 log "GET /api/schema/swagger-ui/ HTTP/1.1" 200 4644
+INFO 2026-03-31 20:58:24,371 log "GET /api/schema/ HTTP/1.1" 200 23115
+ERROR 2026-03-31 20:58:35,230 log Internal Server Error: /api/workouts/1/
+Traceback (most recent call last):
+  File "C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\.venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\.venv\Lib\site-packages\django\core\handlers\base.py", line 198, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\.venv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\.venv\Lib\site-packages\django\views\generic\base.py", line 106, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\.venv\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\.venv\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\.venv\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\.venv\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\.venv\Lib\site-packages\rest_framework\views.py", line 421, in initial
+    self.check_permissions(request)
+    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\.venv\Lib\site-packages\rest_framework\views.py", line 338, in check_permissions
+    if not permission.has_permission(request, self):
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\.venv\Lib\site-packages\rest_framework\permissions.py", line 243, in has_permission
+    queryset = self._queryset(view)
+  File "C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\.venv\Lib\site-packages\rest_framework\permissions.py", line 226, in _queryset
+    queryset = view.get_queryset()
+  File "C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\.venv\Lib\site-packages\rest_framework\generics.py", line 67, in get_queryset
+    assert self.queryset is not None, (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 'RetrieveUpdateDestroyAPIView' should either include a `queryset` attribute, or override the `get_queryset()` method.
+ERROR 2026-03-31 20:58:35,288 log "GET /api/workouts/1/ HTTP/1.1" 500 145
+INFO 2026-03-31 20:58:55,664 autoreload C:\Users\hp\Documents\PROJECTS\WORKOUT TRACKER\workouts\views.py changed, reloading.
+INFO 2026-03-31 20:58:56,467 autoreload Watching for file changes with StatReloader
