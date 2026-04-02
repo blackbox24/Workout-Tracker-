@@ -31,7 +31,7 @@ This project is a backend system for a workout tracker application where users g
 
 - [x] CREATE WORKOUT - Users create workout plans composed of multiple exercises
 - [x] UPDATE WORKOUT - Users update works
-- [ ] COMMENT ON WORKOUTS
+- [x] COMMENT ON WORKOUTS
 - [x] DELETE WORKOUT
 - [ ] SCHEDULE WORKOUT
 - [x] LIST WORKOUTS
