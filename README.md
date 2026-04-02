@@ -1,3 +1,4 @@
+https://roadmap.sh/projects/fitness-workout-tracker
 # WORKOUT TRACKER PROJECT
 
 This project is a backend system for a workout tracker application where users get to login, signup, create workout plans and track their progress. This will include features like JWT authentication, CRUD operations for workouts and report generations on past workouts
